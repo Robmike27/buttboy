@@ -43,4 +43,4 @@ async def channelCount(channel):
             hasCounted = True
     return frickSwears
 
-client.run('MzUwODU1NTgzMzAzNDY3MDA5.WaD1uQ.yek2iRTM6-al7hIG1mSurVqG9bY')
+client.run('')
