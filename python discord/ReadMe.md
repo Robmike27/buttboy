@@ -5,16 +5,16 @@ Buttboy is a Discord bot meant as a fun distraction with python. He isn't online
 ## Features
 
 Count Swears!<br>
-Inline-style: 
 ![alt text](https://i.imgur.com/xIDd5C8.png "Buttboy counting swears")
 
+
 Ask you to watch your language!<br>
-Inline-style: 
 ![alt text](https://i.imgur.com/wVKvEpI.png "Buttboy asking you to be polite")
 
+
 Says hello when greeted!<br>
-Inline-style: 
 ![alt text](https://i.imgur.com/lC2iZUs.png "Buttboy asking you to be polite")
+
 
 ## Bugs and inferiorities
 
