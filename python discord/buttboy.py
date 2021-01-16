@@ -8,10 +8,11 @@ hasCounted = False
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
     
-
+#Built on the quickstart from the discord.py documentation
 @client.event
 async def on_message(message):
     global frickSwears
+
     await channelCount(message.channel)
 
     if message.author == client.user:
@@ -31,10 +32,11 @@ async def on_message(message):
         await message.channel.send('Ok...')
         await message.channel.send('This channel has said the frick word '+ str(frickSwears) +' times!')
 
-#This function counts how many times a channel has the word fuck or any variaton
-async def channelCount(channel):
+#This function counts how many times a channel has the word fuck or any variaton of it.
+async def Channel_Count(channel):
     global hasCounted
     global frickSwears
+
     if hasCounted == False:
         channel = await channel.history(limit=None).flatten()
         for message in channel:
@@ -42,5 +44,6 @@ async def channelCount(channel):
                 frickSwears += 1
             hasCounted = True
     return frickSwears
+
 
 client.run('')
