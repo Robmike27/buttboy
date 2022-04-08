@@ -16,7 +16,7 @@ Says hello when greeted!<br>
 ![alt text](https://i.imgur.com/lC2iZUs.png "Buttboy asking you to be polite")
 
 
-## Bugs and inferiorities
+## Bugs and Inferiorities
 
 * Bot token was literally in the code of a previous build. 
 * Bot takes time to start up 

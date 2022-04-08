@@ -1,22 +1,48 @@
 import discord
 
+
 client = discord.Client()
 frickSwears = 0
 hasCounted = False
-key = ""
+key = ''
+
+def On_Start():
+    global key
+    try:
+        key = open("key.txt", "r")
+    except:
+        print("No keyfile found please insert bot token.")
+        key = open("key.txt", "w")
+        key.write(input())
+        key.close()
+        key = open("key.txt", "r")
+
 
 On_Start()
 
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
+
+#This function counts how many times a channel has the word fuck or any variaton of it.
+async def Channel_Count(channel):
+    global hasCounted
+    global frickSwears
+
+    if hasCounted == False:
+        channel = await channel.history(limit=None).flatten()
+        for message in channel:
+            if 'fuck' in message.content.lower() or 'fucking' in message.content.lower():
+                frickSwears += 1
+            hasCounted = True
+    return frickSwears
     
 #Built on the quickstart from the discord.py documentation
 @client.event
 async def on_message(message):
     global frickSwears
 
-    await channelCount(message.channel)
+    await Channel_Count(message.channel)
 
     if message.author == client.user:
         return
@@ -48,8 +74,5 @@ async def Channel_Count(channel):
             hasCounted = True
     return frickSwears
 
-def On_Start():
-    global key
-    key = input("Insert bot key \n")
 
-client.run()
+client.run(key.read())
