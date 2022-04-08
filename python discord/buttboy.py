@@ -3,6 +3,9 @@ import discord
 client = discord.Client()
 frickSwears = 0
 hasCounted = False
+key = ""
+
+On_Start()
 
 @client.event
 async def on_ready():
@@ -45,5 +48,8 @@ async def Channel_Count(channel):
             hasCounted = True
     return frickSwears
 
+def On_Start():
+    global key
+    key = input("Insert bot key \n")
 
-client.run('')
+client.run()
