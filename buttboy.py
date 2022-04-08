@@ -18,7 +18,7 @@ def On_Start():
         key = open("key.txt", "r")
 
 
-On_Start()
+
 
 @client.event
 async def on_ready():
@@ -74,5 +74,6 @@ async def Channel_Count(channel):
             hasCounted = True
     return frickSwears
 
+On_Start()
 
 client.run(key.read())
